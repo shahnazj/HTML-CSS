@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silicon | Manage All Your Money in One App</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav>
+    <nav class="main-nav" aria-label="main navigation">
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
         <div class="container">
             <a href="/">
-                <img src="/images/logo.svg" alt="">
+                <img src="images/logo.svg" alt="Silicon logotype">
             </a>
+
 
             <div class="darkmode-toggle">
                 <p>Dark Mode</p>
@@ -21,23 +25,59 @@
                 </label>
             </div>
 
-            <button class="media-btn" aria-controls="main-menu" aria-expanded="false" aria-label="toggle navigation">
-                <img src="/images/icons/hamburger.svg">
+            <button class="menu-btn" aria-controls="main-menu" aria-expanded="false" aria-label="toggle navigation">
+                <img src="images/icons/hamburger.svg" alt="">
             </button>
 
-            <ul id="main-menu" class="main-menu">
+
+            <ul id="main-menu" class="main-menu hide">
                 <li>
                     <a href="#" class="nav-link">Features</a>
                 </li>
                 <li>
                     <a href="#" class="btn btn-primary">
                         <img src="images/icons/user.svg" alt="">
-                        <span>Sing in / up</span>
+                        <span>Sign in / up</span>
                     </a>
                 </li>
             </ul>
 
         </div>
     </nav>
+    <div id="main">
+        <section aria-label="showcase" class="showcase">
+            <div class="container space-y-3">
+                <h1 class="d4">Manage All Your Money in One App</h1>
+                <div class="content space-y-3">
+                    <p class="text-lg">We offer you a new generation of the mobile banking.
+                        Save, spend & manage money in your pocket.</p>
+                        <div class="market-btns">
+                            <a href="#" class="store-btn">
+                                <span class="sr-only">Download on App Store</span>
+                                <img src="/images/icons/appstore-light.svg">
+                            </a href="#" class="store-btn">
+                            <a>
+                                <span class="sr-only">Get it on Google Play</span>
+                                <img src="/images/icons/google-light.svg">
+                            </a>
+                        </div>
+
+                        <div class="more">
+                            <a href="#feature" class="btn-round btn-white">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <span>Discover more</span>
+                        </div>
+                </div>
+                <div class="phone-image-container">
+                    <img src="/images/iphones.png" alt="">
+
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
