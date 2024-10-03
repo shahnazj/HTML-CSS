@@ -199,21 +199,24 @@ img{
     
 }
 
-.main-nav{
+/* NAVBAR START */
+/* NAVBAR START */
+.main-nav {
     padding-block: 1rem;
-    position: relative;
+    position: absolute;
     width: 100%;
-    top:0;
+    top: 0;
+
 
     .skip-link{
         display: inline-block;
         padding: 1rem;
         background-color: var(--clr-bg);
-        border: 1px solid  var(--clr-primary);
+        border: 1px solid var(--clr-primary);
         border-radius: 0 1rem 1rem 0;
         position: absolute;
         left: -100vw;
-        top : 10rem;
+        top: 10rem;
         transition: 300ms;
 
         &:focus{
@@ -224,31 +227,35 @@ img{
     .container{
         position: relative;
     }
-
     .container,
     .main-menu{
         display: flex;
         align-items: center;
     }
 
-    .darkmode-toggle{
+    
+    .darkmode-toggle {
         position: absolute;
         right: 12rem;
         display: flex;
         align-items: center;
         gap: 1rem;
     }
-    
-    .menu-btn{
-        /* display: none;*/
+
+    p {
+        font-weight: 600;
+    }
+    .menu-btn {
+        display: none;
         background-color: transparent;
         border: 0;
-        padding: 0.5rem;
-        padding-right: 0;
+        /* width: 50px; */
+        /* aspect-ratio: 1; */
+        padding: .5rem;
         cursor: pointer;
         position: absolute;
         right: 1rem;
-        z-index: 99099;
+        z-index: 9999;
     }
 
     .main-menu{
@@ -257,54 +264,115 @@ img{
         margin-left: 3rem;
     }
 
-    .nav-link{
-        color: (var(--clr-navigation-text));
+    .nav-link {
+        color: var(--clr-navigation-text);
         text-decoration: none;
-        font-weight: 600;
-        &:hover, &:focus-visible{
-            cursor: pointer;
+        font-weight:600;
+
+        &:hover,
+        &:focus-visible {
             color: var(--clr-primary);
         }
     }
 
-    @media (width < 992px){
+
+    @media(width <= 992px){
         .menu-btn{
             display: block;
         }
         .container{
             position: static;
         }
-        .darkmode-toggle{
+        .darkmode-toggle {
             right: 8rem;
         }
         .main-menu{
             position: absolute;
-            top: 100%;
+            top:100%;
             right: 0;
             flex-direction: column-reverse;
             gap: 1rem;
             padding-block: 2rem;
             background-color: var(--clr-bg);
+            z-index: 1000;
+            
             box-shadow: 0 5px 5px #00000028;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 1rem;
         }
 
         .hide{
-            display: hide;
+            display: none;
+        }
+        .menu-btn[aria-expanded="true"] ~ .main-menu {
+            animation: openMenu 250ms forwards
+        }
+        .menu-btn[aria-expanded="false"] ~ .main-menu {
+            animation: closeMenu 250ms forwards
         }
 
-        .nav-link{
-            display: inline-block;
-        }
+    }
 
-        .menu-btn[aria-expanded="true"] ~ .main-menu{
-            animation: openMenu 250ms forwards;
-        }
 
-        .menu-btn[aira-expanded="false"] ~ .main-menu{
-            animation: closeMenu 250ms forwards;
-        }   
+
+    @media (width < 540px){
+        .darkmode-toggle {
+            right: 4rem;
+        }
+        .darkmode-toggle p{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+
+        }
+    }
+
+}
+/* NAVBAR END */
+
+/* ٔNAVBAR END */
+
+
+/* Showcase */
+.showcase {
+    padding: 6rem;
+    text-align: center;
+    background-color: var(--clr-bg);
+    background-image: linear-gradient(to top, rgba(99, 101, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
+
+    .content{
+        padding: 3rem;
+    }
+
+    .market-btns{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .store-btn{
+        background-color: var(--clr-gray-900);
+        width: 100%;
+        padding: .5em 1em;
+        border-radius: var(--br-l);
+    }
+    img{
+        height: 3em;
     }
 }
+/*showcase end */
+
+
+
+
 
 @keyframes openMenu{
     0%{
