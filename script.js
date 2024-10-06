@@ -52,3 +52,18 @@ function disableDarkMode(){
     darkModeSwitch.checked = false
     document.documentElement.classList.remove('dark')
 }
+
+// FAQ part codes
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    question.classList.toggle('active');
+    answer.classList.toggle('active');
+    if (answer.classList.contains('active')) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = '0';
+    }
+  });
+});
